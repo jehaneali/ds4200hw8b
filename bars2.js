@@ -1,5 +1,8 @@
 // code based on https://bl.ocks.org/Chi-Loong/e3389dfb6873c85caf445f0faba52ec4
-
+const colorScale = d3.scaleOrdinal()
+    .domain(["California", "Northeastern", "Midwestern","Southern", "Western"])
+    .range(["#551843", "#a1ce5e", "#facf63", "#EDB4B4", "#a2d0cf"]);
+   
 
 var data = [
     { region: "California", mean: 51032 },
@@ -61,11 +64,11 @@ function drawChart(dataSet) {
     chart.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - marginBar2.left)
-      .attr("x",0 - (heightBar2 / 2))
+      .attr("x",0 - (heightBar2 / 2) - 50)
       .attr("dy", "1em")
       .attr("class", "legend")
       .style("fill", "middle")
-      .text("Value");      
+      .text("Median Mid-Career Salary ($)");      
 
     chart.selectAll("rect")
         .data(dataSet)
@@ -77,6 +80,7 @@ function drawChart(dataSet) {
                 .attr("width", 0)
                 .attr("height", 0)
                 .attr("class", "svgRect")
+                .attr("fill", function(d) {return colorScale(d.region)})
                 .call(enter => enter.transition()
                     .duration(1000)
                     .attr("width", xScale.bandwidth())

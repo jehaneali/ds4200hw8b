@@ -1,6 +1,6 @@
 // code based on https://bl.ocks.org/d3noob/86a305ac2506454f7952183ca4bc1ea0 
 
-var marginLine = { top: 20, right: 40, bottom: 280, left: 50 },
+var marginLine = { top: 20, right: 40, bottom: 280, left: 70 },
     width = 960 - marginLine.left - marginLine.right,
     height = 500 - marginLine.top - 60;
 
@@ -194,6 +194,15 @@ d3.csv("topDeg.csv").then(function (data) {
         .attr("class", "legend")
         .style("fill", "#000000")
         .text("Percentile");
+
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - marginLine.left )
+      .attr("x",0 - (height / 2) - 50)
+      .attr("dy", "1em")
+      .attr("class", "legend")
+      .style("fill", "middle")
+      .text("Median Mid-Career Salary");      
 
     // add the blue line legend
     svg.append("text")
