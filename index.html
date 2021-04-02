@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
+    
     div.tooltip {
   position: absolute;
   text-align: center;
@@ -38,6 +39,7 @@
 
 <head>
 <!-- Load d3.js -->
+
 <script src="https://d3js.org/d3.v6.js"></script>
 
 
@@ -54,15 +56,41 @@
 
 <body>
 
+    <!-- <script>
+        var data1 = [
+        {region: "California", mean: 4},
+        {region: "Northeastern", mean: 16},
+        {region: "Midwestern", mean: 8}
+     ];
+     
+     var data2 = [
+        {region: "Southern", mean: 7},
+        {region: "Western", mean: 1},
+        {region: "California", mean: 20}
+     ];
+    </script> -->
+
+<button id="bt1">Start</button>
+<!-- <button onclick= "update("regionalAvgStart.csv")">Variable 1</button> -->
+<button id="bt2">Mid</button>
+<svg id="chart" viewBox="0 0 960 500"></svg>
+
 <div id="bar"></div>
+
+<h2>Median Starting Salary vs Median Mid-Career Salary by Major</h2>
+Hover over a point to see what major it corresponds to!
+<br>
 <div id="scatter"></div>
+
+<h2>Median Mid-Career Salary by Percentile for Majors</h2>
+Click on the major labels to hide/show each of the lines
 <div id="line"></div>
 
 
 
 </body>
 
-<script src="bars.js"></script>
+<script src="bars2.js"></script>
 <script src="scatterplot.js"></script> 
 <script src="multiLine.js"></script> 
 

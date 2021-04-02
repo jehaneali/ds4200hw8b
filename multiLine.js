@@ -1,3 +1,5 @@
+// code based on https://bl.ocks.org/d3noob/86a305ac2506454f7952183ca4bc1ea0 
+
 var marginLine = { top: 20, right: 40, bottom: 280, left: 50 },
     width = 960 - marginLine.left - marginLine.right,
     height = 500 - marginLine.top - 60;
