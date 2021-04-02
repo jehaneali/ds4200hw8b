@@ -1,17 +1,5 @@
 // code based on https://bl.ocks.org/Chi-Loong/e3389dfb6873c85caf445f0faba52ec4
 
-// let data = [
-//     {student: "Alfred", score: 65},
-//     {student: "Bernard", score: 35},
-//     {student: "Christine", score: 75}
-// ];
-// let data2 = [
-//     {student: "Alfred", score: 25},
-//     {student: "Bernard", score: 95},
-//     {student: "Christine", score: 65},
-//     {student: "Daniella", score: 40},
-//     {student: "Eric", score: 50}
-// ];
 
 var data = [
     {region: "California", mean: 51032},
@@ -29,8 +17,8 @@ var data = [
     {region: "Midwestern", mean: 78180}
  ];
 
-let marginBar2 = {top: 20, right: 20, bottom: 40, left: 40},
-    widthBar2 = 960 - marginBar2.left - marginBar2.right,
+let marginBar2 = {top: 20, right: 20, bottom: 40, left: 60},
+    widthBar2 = 500 - marginBar2.left - marginBar2.right,
     heightBar2 = 500 - marginBar2.top - marginBar2.bottom;
 let chart = d3.select("#chart")
     .append("g")
