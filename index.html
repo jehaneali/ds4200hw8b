@@ -14,12 +14,31 @@
   pointer-events: none;
 }
 
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.axisSteelBlue text{
+  fill: steelblue;
+}
+
+.axisRed text{
+  fill: red;
+}
+
+.legend {
+  font: 16px sans-serif;
+  font-weight: bold;         
+  text-anchor: start;
+}
+
 </style>
 
 <head>
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
-
 
 
 <!-- style of selected circles -->
@@ -37,6 +56,7 @@
 
 <div id="bar"></div>
 <div id="scatter"></div>
+<div id="line"></div>
 
 
 
@@ -44,5 +64,6 @@
 
 <script src="bars.js"></script>
 <script src="scatterplot.js"></script> 
+<script src="multiLine.js"></script> 
 
 </html>
