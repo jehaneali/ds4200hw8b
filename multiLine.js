@@ -1,4 +1,4 @@
-var marginLine = { top: 20, right: 40, bottom: 260, left: 50 },
+var marginLine = { top: 20, right: 40, bottom: 280, left: 50 },
     width = 960 - marginLine.left - marginLine.right,
     height = 500 - marginLine.top - 60;
 
@@ -138,6 +138,38 @@ d3.csv("topDeg.csv").then(function (data) {
     .style("stroke", "#391242")
     .attr("d", valueline7);
 
+    // add valueLine8
+    svg.append("path")
+    .data([data])
+    .attr("class", "line")
+    .attr("id", "navyLine")
+    .style("stroke", "#002b54")
+    .attr("d", valueline8);
+
+    // add valueLine9
+    svg.append("path")
+    .data([data])
+    .attr("class", "line")
+    .attr("id", "orchidLine")
+    .style("stroke", "#985396")
+    .attr("d", valueline9);
+
+    // add valueLine10
+    svg.append("path")
+    .data([data])
+    .attr("class", "line")
+    .attr("id", "tanLine")
+    .style("stroke", "#c5ab89")
+    .attr("d", valueline10);
+
+    // add valueLine11
+    svg.append("path")
+    .data([data])
+    .attr("class", "line")
+    .attr("id", "turqoiseLine")
+    .style("stroke", "#a2d0cf")
+    .attr("d", valueline11);
+
     // add the X Axis
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -267,5 +299,69 @@ d3.csv("topDeg.csv").then(function (data) {
             purpleLine.active = active;
         })
         .text("Education");
+
+        svg.append("text")
+        .attr("x", 0)
+        .attr("y", height + marginLine.top + 180)
+        .attr("class", "legend")
+        .style("fill", "#002b54")
+        .on("click", function () {
+            // determine if current line is visible
+            var active = navyLine.active ? false : true,
+                newOpacity = active ? 0 : 1;
+            // hide or show the elements
+            d3.select("#navyLine").style("opacity", newOpacity);
+            // update whether or not the elements are active
+            navyLine.active = active;
+        })
+        .text("Nursing");
+
+        svg.append("text")
+        .attr("x", 0)
+        .attr("y", height + marginLine.top + 200)
+        .attr("class", "legend")
+        .style("fill", "#985396")
+        .on("click", function () {
+            // determine if current line is visible
+            var active = orchidLine.active ? false : true,
+                newOpacity = active ? 0 : 1;
+            // hide or show the elements
+            d3.select("#orchidLine").style("opacity", newOpacity);
+            // update whether or not the elements are active
+            orchidLine.active = active;
+        })
+        .text("Philosophy");
+
+        svg.append("text")
+        .attr("x", 0)
+        .attr("y", height + marginLine.top + 220)
+        .attr("class", "legend")
+        .style("fill", "#c5ab89")
+        .on("click", function () {
+            // determine if current line is visible
+            var active = tanLine.active ? false : true,
+                newOpacity = active ? 0 : 1;
+            // hide or show the elements
+            d3.select("#tanLine").style("opacity", newOpacity);
+            // update whether or not the elements are active
+            tanLine.active = active;
+        })
+        .text("Political Science");
+
+        svg.append("text")
+        .attr("x", 0)
+        .attr("y", height + marginLine.top + 240)
+        .attr("class", "legend")
+        .style("fill", "#a2d0cf")
+        .on("click", function () {
+            // determine if current line is visible
+            var active = turqoiseLine.active ? false : true,
+                newOpacity = active ? 0 : 1;
+            // hide or show the elements
+            d3.select("#turqoiseLine").style("opacity", newOpacity);
+            // update whether or not the elements are active
+            turqoiseLine.active = active;
+        })
+        .text("Psychology");
 
 });
