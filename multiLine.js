@@ -188,6 +188,13 @@ d3.csv("topDeg.csv").then(function (data) {
     //       .attr("transform", "translate( " + width + ", 0 )")
     //       .call(d3.axisRight(y1));
 
+    svg.append("text")
+        .attr("x", 400)
+        .attr("y", height + marginLine.top + 20)
+        .attr("class", "legend")
+        .style("fill", "#000000")
+        .text("Percentile");
+
     // add the blue line legend
     svg.append("text")
         .attr("x", 0)
@@ -204,7 +211,6 @@ d3.csv("topDeg.csv").then(function (data) {
             blueLine.active = active;
         })
         .text("Biology");
-
     // add the red line legend
     svg.append("text")
         .attr("x", 0)
@@ -365,5 +371,7 @@ d3.csv("topDeg.csv").then(function (data) {
             turqoiseLine.active = active;
         })
         .text("Psychology");
+
+        
 
 });

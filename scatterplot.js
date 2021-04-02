@@ -1,9 +1,9 @@
 // code based on https://bl.ocks.org/d3noob/5680dd0089abdc5b15f188d5efe48852
 
 // set the dimensions and margins of the graph
-var marginScatter = {top: 20, right: 20, bottom: 30, left: 50},
+var marginScatter = {top: 20, right: 20, bottom: 100, left: 50},
     widthScatter = 960 - marginScatter.left - marginScatter.right,
-    heightScatter = 500 - marginScatter.top - marginScatter.bottom;
+    heightScatter = 680 - marginScatter.top - marginScatter.bottom;
 
 
 // set the ranges
@@ -82,5 +82,11 @@ d3.csv("cleanedMajorSalaries.csv").then(function(data) {
   svgScatter.append("g")
       .call(d3.axisLeft(yScatter));
 
+  svgScatter.append("text")
+        .attr("x", 400)
+        .attr("y", height + marginScatter.top + 170)
+        .attr("class", "legend")
+        .style("fill", "#000000")
+        .text("Median Starting Salary");
 
 });
