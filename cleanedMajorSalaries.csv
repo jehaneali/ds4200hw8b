@@ -1,4 +1,4 @@
-,major,startingMedian,midMedian,Percent change from Starting to Mid-Career Salary,Mid-Career 10th Percentile Salary,Mid-Career 25th Percentile Salary,Mid-Career 75th Percentile Salary,Mid-Career 90th Percentile Salary
+,major,startingMedian,midMedian,percentChange,Mid-Career 10th Percentile Salary,Mid-Career 25th Percentile Salary,Mid-Career 75th Percentile Salary,Mid-Career 90th Percentile Salary
 0,Accounting,46000.0,77100.0,67.6,"$42,200.00","$56,100.00","$108,000.00","$152,000.00"
 1,Aerospace Engineering,57700.0,101000.0,75.0,"$64,300.00","$82,100.00","$127,000.00","$161,000.00"
 2,Agriculture,42600.0,71900.0,68.8,"$36,300.00","$52,100.00","$96,300.00","$150,000.00"

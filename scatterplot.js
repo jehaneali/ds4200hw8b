@@ -15,6 +15,11 @@ var valueline = d3.line()
     .x(function(d) { return x(d.startingMedian); })
     .y(function(d) { return y(d.midMedian); });
 
+    var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+
 // append the svg obgect to the body of the page
 // appends a 'group' element to 'svg'
 // moves the 'group' element to the top left margin
@@ -36,7 +41,7 @@ d3.csv("cleanedMajorSalaries.csv").then(function(data) {
 
   // Scale the range of the data
   x.domain([30000, d3.max(data, function(d) { return d.startingMedian; })]);
-  y.domain([30000, d3.max(data, function(d) { return d.midMedian; })]);
+  y.domain([30000, 110000]);
 
   // Add the valueline path.
 //   svg.append("path")
@@ -46,11 +51,27 @@ d3.csv("cleanedMajorSalaries.csv").then(function(data) {
       
   // Add the scatterplot
   svg.selectAll("dot")
-      .data(data)
-    .enter().append("circle")
-      .attr("r", 5)
-      .attr("cx", function(d) { return x(d.startingMedian); })
-      .attr("cy", function(d) { return y(d.midMedian); });
+     .data(data)
+   .enter().append("circle")
+     .attr("r", 5)
+     .attr("cx", function(d) { return x(d.startingMedian); })
+     .attr("cy", function(d) { return y(d.midMedian); })
+     .on("mouseover", function(event,d) {
+       div.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div.html(d.major)
+         .style("left", (event.pageX) + "px")
+         .style("top", (event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+  
+  
+
 
   // Add the X Axis
   svg.append("g")
@@ -60,5 +81,6 @@ d3.csv("cleanedMajorSalaries.csv").then(function(data) {
   // Add the Y Axis
   svg.append("g")
       .call(d3.axisLeft(y));
+
 
 });
